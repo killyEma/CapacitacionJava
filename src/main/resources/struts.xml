@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<!-- la suiguiente constante es para q los submit puedan accceder a un metodo espesifico de la Action -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.devMode" value="true" />
+	<package name="default" extends="struts-default">
+		<action name="inicio" class="com.accenture.accion.InicioAccion">
+			<result name="success" type="redirect">/altaPersona.jsp</result>
+		</action>
+		<action name="realizarAlta" class="com.accenture.accion.AltaPersonaAccion" >
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="editarPersona" class="com.accenture.accion.AltaPersonaAccion" method="editarPersona">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="borrarPersona" class="com.accenture.accion.AltaPersonaAccion" method="borrarPersona">
+			<result name="success">/index.jsp</result>
+		</action>
+				
+	</package>
+
+</struts>
